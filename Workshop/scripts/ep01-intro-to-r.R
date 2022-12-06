@@ -31,7 +31,7 @@
 
 
 # Calculate 10 plus 2 all divided by 3 and then squared
-
+((10 + 2)/3) ^ 2
 # Solution:
 
 
@@ -50,6 +50,14 @@ a + b               # we can add them together just like numbers
 #
 # What happens if we change a and then re-add a and b? [Hint: Try it now]
 #
+a <- 100
+a = 79
+
+C = a + b
+
+
+a + b
+
 # Does it work if you just change a in the script and then add a and b? [Hint: Try it]
 #
 # Did you still get the same answer after you changed a? 
@@ -65,7 +73,8 @@ a + b               # we can add them together just like numbers
 # Logical operators
 #
 # == != < > >= <= !
-1 < 124
+1 > 124
+1 != 4
 
 #
 # Sensible object names are sensible ...
@@ -87,36 +96,47 @@ ekljre2jklwef023ijlefj93jkl23rj90f32k <- 1
 #
 # Solution: [Hint:       <- "Introduction to R"]
 
+DataCarpentry <- "Introduction to R" 
+
 # Assign the name of video conferencing tool to an object
 #
 # Solution: [Hint:      <- "Zoom"]
 
+Video_conference = "Zoom"
 
 # Which of these are valid object names: [Hint: Try them out]
 #
-#  min_height
-#  max.height
-#  _age
-#  .mass
-#  MaxLength
-#  min-length
-#  2widths
-#  celsius2kelvin
+#  min_height     OKAY
+#  max.height     OKAY
+#  _age            Invalid
+#  .mass           Invalid 
+#  MaxLength      OKAY
+#  min-length      Invalid 
+#  2widths         Invalid 
+#  celsius2kelvin    OKAY
 
+min-length <- "d"
+celsius2kelvin <- "w"
 
 #
 # Topic: Displaying results
 #
 
-weight_lb <- 55    # doesn't print anything
-(weight_lb <- 55)  # but putting parenthesis () around and expression makes it display
-weight_lb          # and so does typing the name of the object
+weight_lb <- 55    
+# doesn't print anything
+(weight_lb <- 55)  
+# but putting parenthesis () around and expression makes it display
+weight_lb         
+# and so does typing the name of the object
 
 # There are 2 and a bit pounds in a kilogram 
 #
-# 2.20462 * weight_lb
-# weight_lb <- 57.5
-# weight_kg <- 2.20462 * weight_lb
+# 
+2.20462 * weight_lb
+# 
+weight_lb <- 57.5
+# 
+weight_kg <- 2.20462 * weight_lb
 #
 
 # 
@@ -125,11 +145,21 @@ weight_lb          # and so does typing the name of the object
 # 
 # What are the values after each statement in the following?
 # 
-# mass <- 47.5            # mass is: 
-# age  <- 122             # age is:
-# mass <- mass * 2.0      # mass is:
-# age  <- age - 20        # age is:
-# mass_index <- mass/age  # mass_index is: 
+# 
+mass <- 47.5           
+# mass is: 
+# 
+age  <- 122            
+# age is:
+# 
+mass <- mass * 2.0     
+# mass is:
+# 
+age  <- age - 20       
+# age is:
+# 
+mass_index <- mass/age  
+# mass_index is: 
 #
 # How do we do we know if our answers are correct ? 
 # [Hint: <highlight> [ALT][ENTER]
@@ -151,9 +181,17 @@ weight_lb          # and so does typing the name of the object
 # Add explanatory comments to the following lines of code
 #
 
+#START WITH FEET
+
 ft <- 3
+
+# CONVERT TO INCHES
 in <- ft * 12
+
+#CONVERT TO CMS
 cms <- in * 2.54
+
+#CONVERT TO METERS
 m = cms / 100
 
 #
@@ -167,8 +205,16 @@ m = cms / 100
 # Absolute Value: abs()
 # 
 # Decimal rounding: round(3.14159)
+ round(3.4567)
+ ?round
 
-
+ pi = 23.45789
+ 
+ round (pi, digits =2)
+ 
+ args(round)
+ 
+ 
 # Built-in constants: eg, pi
 
 # Getting help about particular functions 
@@ -179,8 +225,11 @@ m = cms / 100
 
 # Argument have default order - but can re-ordered using names
 #
-# round(3.14159, 2)
-# round(digits = 2, x = 3.14159)
+# 
+ round(3.14159, 2)
+# 
+ round(digits = 2, x = pi)
+ 
 
 #
 # Exercise
@@ -189,12 +238,15 @@ m = cms / 100
 #
 # Answer:
 
+?log
 
-
+log10(pi)
 #
 # Topic: Vectors and Data Types
 
 # Combine some values in a 'vector'
+
+glenghts = c(12,13,14,15)
 #
 # c(value, value, value ...)
 #
@@ -203,6 +255,12 @@ m = cms / 100
 #  4.6, 3000, 50000
 
 # and repeat to create a vector of species
+
+species = c("ecoli", "human", "corn")
+
+length(species)
+
+str(species)
 #
 #  "ecoli", "human", "corn"
 
@@ -212,7 +270,7 @@ m = cms / 100
 
 # and also see what class they are with class()
 
-
+class(species)
 # and btw, there are other classes as well ...
 #
 # sqrt_of_minus_one <- sqrt(-1+0i)
@@ -226,6 +284,8 @@ m = cms / 100
 
 # multiply glengths by 5
 # add glength to itsself
+
+glenghts * 5
 
 # appending and prepending elememts to a vector
 #
@@ -275,7 +335,8 @@ length_species
 # How many values in combined_logical are "TRUE" (ie character 4 characters)
 # in the following example:
 #   
-#   num_logical <- c(1, 2, 3, TRUE)
+#  
+num_logical <- c(1, 2, 3, TRUE)
 #   char_logical <- c("a", "b", "c", TRUE)
 #   combined_logical <- c(num_logical, char_logical)
 
@@ -288,6 +349,11 @@ length_species
 animals <- c("mouse", "rat", "dog", "cat")
 
 # reference (access) the second element using [] 
+animals [2]
+
+
+
+animals [c(1,4)]
 
 # access the subset consisting of element 3 and element 2
 
@@ -298,8 +364,12 @@ animals <- c("mouse", "rat", "dog", "cat")
 
 # Conditional subsetting
 #
-# weight_g <- c(21,   34,    39,   54,   55)
-# weight_g[   c(TRUE, FALSE, TRUE, TRUE, FALSE)]
+# 
+weight_g <- c(21,   34,    39,   54,   55)
+# 
+weight_g[   c(TRUE, FALSE, TRUE, TRUE, FALSE)]
+
+weight_g >50
 # 
 
 # using comparison operators to generate a 'logical' vector 
